@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cyber-bot-obedy47
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: AIzaSyDTSiyQQAN1RSNvC4GIHkmgFbzVI80WV9E
