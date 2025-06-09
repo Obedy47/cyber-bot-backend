@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from google import genai
@@ -6,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Initialize Gemini client with API key
-client = genai.Client(api_key="AIzaSyDTSiyQQAN1RSNvC4GIHkmgFbzVI80WV9E")  # Replace with your actual API key
+client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])  # Replace with your actual API key
 
 # Rich assistant context
 CYBER_CONTEXT = """
